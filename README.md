@@ -7,7 +7,7 @@ httpx  https://github.com/projectdiscovery/httpx  //存活验证
 anew   https://github.com/tomnomnom/anew  //去重对比
 
 
-subfinder -silent -dL domain.txt | anew domians.txt | httpx -title -tech-detect -status-code  -csv  //获取子域名，对比文件，验证存货 输出到csv文件
+subfinder -silent -dL domain.txt | anew domians.txt | httpx -title -tech-detect -status-code  -csv  //获取子域名，对比文件，验证存活
 
 
 gau   https://github.com/lc/gau    // 获取网站以前的路径
