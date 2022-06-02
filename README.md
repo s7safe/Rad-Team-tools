@@ -22,3 +22,20 @@ echo domain.com  | gau  --blacklist  png,jpg,gif,html,eot,svg,woff,woff2  | http
 
 cat domian.txt  | gau  --blacklist  png,jpg,gif,html,eot,svg,woff,woff2  | httpx -title -tech-detect -status-code  -csv  
 
+
+针对JS进行提取敏感字段
+https://github.com/machinexa2/Nemesis
+
+或许你需要一些命令
+cat livejs.txt | grep dev
+cat livejs.txt | grep app
+cat livejs.txt | grep static
+
+
+https://github.com/tomnomnom/fff
+cat jslist.txt | fff | grep 200 | cut -d “ “ -f1 | tee livejs.txt
+
+
+想法来自@Ratnadip Gajbhiye
+
+
