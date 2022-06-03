@@ -44,3 +44,8 @@ https://medium.com/@ratnadip1998/how-to-find-access-admin-panel-by-digging-into-
 https://github.com/ffuf/ffuf
 
 
+
+
+扫描PHP的漏洞
+
+https://github.com/ecriminal/phpvuln
