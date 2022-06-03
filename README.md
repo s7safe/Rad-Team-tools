@@ -40,3 +40,7 @@ cat jslist.txt | fff | grep 200 | cut -d “ “ -f1 | tee livejs.txt
 https://medium.com/@ratnadip1998/how-to-find-access-admin-panel-by-digging-into-js-files-282d89391a2d
 
 
+目录扫描
+https://github.com/ffuf/ffuf
+
+
