@@ -1,5 +1,6 @@
 # 总结红队作战工具
 
+subdomain3 https://github.com/yanxiu0614/subdomain3/blob/master/README_ZH.md //子域名获取
 subfinder  https://github.com/projectdiscovery/subfinder  //子域名获取
 
 httpx  https://github.com/projectdiscovery/httpx  //存活验证
