@@ -52,3 +52,9 @@ https://github.com/ffuf/ffuf
 对UEL进行处理
 https://github.com/tomnomnom/gf
 
+
+隐藏参数枚举
+https://github.com/s0md3v/Arjun
+
+
+
