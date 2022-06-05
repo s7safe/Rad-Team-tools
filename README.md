@@ -61,5 +61,6 @@ https://github.com/tomnomnom/gf
 隐藏参数枚举
 https://github.com/s0md3v/Arjun
 
+for i in $(cat 200.txt);do echo "xray scanning $i" ; ./xray webscan --browser-crawler  $i --html-output vuln.html; done
 
 
