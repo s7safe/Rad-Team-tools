@@ -35,6 +35,11 @@ cat livejs.txt | grep app
 cat livejs.txt | grep static
 
 
+
+
+for i in $(cat 200.txt);do echo "xray scanning $i" ; ./xray webscan --browser-crawler  $i --html-output vuln.html; done
+
+
 https://github.com/tomnomnom/fff
 cat jslist.txt | fff | grep 200 | cut -d “ “ -f1 | tee livejs.txt
 
