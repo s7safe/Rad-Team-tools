@@ -61,6 +61,8 @@ XRAY 命令行批量扫描
 
 for i in $(cat 200.txt);do echo "xray scanning $i" ; ./xray webscan --browser-crawler  $i --html-output vuln.html; done
 
+XSS扫描
+ cat url.txt | hakrawler -subs |grep -v rss | grep spotify |grep -v google | grep = | dalfox pipe --silence --skip-bav 
 
 
 
