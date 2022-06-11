@@ -88,10 +88,11 @@ https://github.com/hahwul/dalfox
  cat url.txt | hakrawler -subs |grep -v key | grep key |grep -v google | grep = | dalfox pipe --silence --skip-bav 
 
 
+**端口扫描**
+https://github.com/projectdiscovery/naabu
+
 
 持续更新
-
-
 
 
 
