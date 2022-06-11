@@ -91,7 +91,8 @@ https://github.com/hahwul/dalfox
 **端口扫描**
 https://github.com/projectdiscovery/naabu
 
-
+**批量目录扫描**
+https://github.com/H4ckForJob/dirmap
 持续更新
 
 
