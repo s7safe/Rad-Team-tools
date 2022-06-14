@@ -23,7 +23,7 @@ anew   https://github.com/tomnomnom/anew
 
 **//获取子域名，对比文件，验证存活**
 
-subfinder -silent -dL domain.txt | anew domians.txt | httpx -title -tech-detect -status-code  -csv  
+subfinder -silent -dL domain.txt | anew domians.txt | httpx -title -tech-detect -status-code 
 
 **视觉侦查兄弟**
 https://github.com/sensepost/gowitness
