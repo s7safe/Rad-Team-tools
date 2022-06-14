@@ -6,6 +6,11 @@ subdomain3 https://github.com/yanxiu0614/subdomain3/blob/master/README_ZH.md
 
 subfinder  https://github.com/projectdiscovery/subfinder 
 
+**端口扫描**
+https://github.com/projectdiscovery/naabu
+**DNS枚举**
+https://github.com/projectdiscovery/dnsx
+
 **//存活验证**
 
 httpx  https://github.com/projectdiscovery/httpx  
