@@ -26,7 +26,7 @@ anew   https://github.com/tomnomnom/anew
 subfinder -silent -dL domain.txt | anew domians.txt | httpx -title -tech-detect -status-code  -csv  
 
 **视觉侦查兄弟**
-https://github.com/TheKingOfDuck/domain_screen
+https://github.com/sensepost/gowitness
 
 
 
