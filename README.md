@@ -1,5 +1,7 @@
 # 总结红队作战工具
 
+本列表，收集一些在服务器上运行的一些工具，组件自动化，服务器长期挂跑项目 欢迎提issues，来丰富工作流程，比如自己挖洞时候的一些简易流程，工具加调用命令
+
 **//子域名获取**
 
 subdomain3 https://github.com/yanxiu0614/subdomain3/blob/master/README_ZH.md 
