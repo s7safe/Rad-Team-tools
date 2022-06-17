@@ -35,7 +35,7 @@ https://github.com/H4ckForJob/dirmap
 ```
 subfinder -silent -dL domain.txt | dnsx -silent | naabu -top-ports 1000 -silent| httpx -title -tech-detect -status-code
 
-subfinder -d trusona.net -silent | ksubdomain e --stdin --silent | naabu -top-ports 1000 -silent
+subfinder -d domain.net -silent | ksubdomain e --stdin --silent | naabu -top-ports 1000 -silent
 
 subfinder -silent -dL domain.txt | dnsx -silent | httpx -o output.txt
 
