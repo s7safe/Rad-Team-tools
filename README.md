@@ -171,5 +171,3 @@ arjun -u https://api.example.com/endpoint -m POST
 
 ```
 
-欢迎关注我的公众号 渗透云笔记
-持续更新
