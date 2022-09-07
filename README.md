@@ -148,6 +148,14 @@ https://github.com/hahwul/dalfox
  cat url.txt | hakrawler -subs |grep -v key | grep key |grep -v google | grep = | dalfox pipe --silence --skip-bav 
 ```
 
+
+echo "http://m.client.10010.com" | gau | egrep -v '(.css|.png|.jpeg|.jpg|.svg|.gif|.wolf)' | while read url; do vars=$(curl -s $url | grep -Eo "var [a-zA-Z0-9]+" | sed -e 's,'var','"$url"?',g' -e 's/ //g' | grep -v '.js' | sed 's/.*/&=xss/g'); echo -e "\e[1;33m$url\n\e[1;32m$vars";done | tee 10010.out
+
+
+来源；https://www.t00ls.com/viewthread.php?tid=63173&highlight=XSS
+
+
+
 一键查找任意文件读取Credit: @Alra3ees , i just changed it a bit
 
 ```
