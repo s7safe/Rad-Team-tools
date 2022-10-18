@@ -179,3 +179,8 @@ arjun -u https://api.example.com/endpoint -m POST
 
 ```
 
+一行代码组成的XSS扫描器（适合无WAF场景）【单论反射XSS，XRAY可封神】
+```
+echo url | subfinder -silent | waybackurls | grep "=" | grep -Ev ".(jpeg|jpg|png|svg|gif|ico|js|css|txt|pdf|woff|woff2|eot|ttf|tif|tiff)" | sed -e 's/=[^?\|&amp;]*/=/g' -e 's/=/=xssspayload/g' | sort -u | httpx -silent -probe -ms "xsspayload" 
+```
+
