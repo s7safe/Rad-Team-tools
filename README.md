@@ -50,6 +50,10 @@ subfinder -silent -dL domain.txt  |  dnsx -silent | httpx -mc 200 -timeout 30 -o
 
 anew   https://github.com/tomnomnom/anew  
 
+gf 
+
+https://github.com/tomnomnom/gf
+
 
 
 **//获取子域名，对比文件，验证存活，达到监听新资产的目的**
