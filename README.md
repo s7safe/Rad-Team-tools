@@ -24,6 +24,12 @@ ksubdomain  https://github.com/knownsec/ksubdomain
 ```
 https://github.com/Mr-xn/subdomain_shell/blob/master/ubuntu/run.sh
 
+这样接入二次扫描好一点 
+
+```
+subfinder -d shopifykloud.com -silent|ksubdomain -verify -skip-wild -silent|httpx -o shopifykloud.com.txt
+
+```
 
 **DNS枚举**
 
