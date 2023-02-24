@@ -1,14 +1,20 @@
 # 总结红队作战工具
+```
 
 本列表，收集一些在服务器上运行的一些工具，组件自动化，服务器长期挂跑项目 欢迎提issues，来丰富工作流程，比如自己挖洞时候的一些简易流程，工具+调用命令，
 在我的日常渗透中，我发现我重复调用几个工具，但是不同的调用组合渗透的工作流程，有时候调用命令会忘记，所以有了这个列表，来达到帮助我记忆一些流程命令的文档，未来还会细化过程，脚本小子福音了
+```
 
 **//子域名获取**
+```
 
 subdomain3 https://github.com/yanxiu0614/subdomain3/blob/master/README_ZH.md 
 
 subfinder  https://github.com/projectdiscovery/subfinder 
 
+ksubdomain  https://github.com/knownsec/ksubdomain
+
+```
 
 
 # 一键调用subfinder+ksubdomain+httpx 强强联合从域名发现到域名验证到获取域名标题、状态码以及响应大小
@@ -20,23 +26,31 @@ https://github.com/Mr-xn/subdomain_shell/blob/master/ubuntu/run.sh
 
 
 **DNS枚举**
-https://github.com/projectdiscovery/dnsx
 
+```
+https://github.com/projectdiscovery/dnsx
+```
 
 
 **端口扫描**
-https://github.com/projectdiscovery/naabu
 
+```
+https://github.com/projectdiscovery/naabu
+```
 
 
 **//存活验证**
 
+```
 httpx  https://github.com/projectdiscovery/httpx  
-
+```
 
 
 **批量目录扫描**
+
+```
 https://github.com/H4ckForJob/dirmap
+```
 
 命令行调用命令
 
@@ -56,11 +70,12 @@ subfinder -silent -dL domain.txt  |  dnsx -silent | httpx -mc 200 -timeout 30 -o
 
 **//去重对比**
 
+```
+
 anew   https://github.com/tomnomnom/anew  
 
-gf 
-
-https://github.com/tomnomnom/gf
+```
+gf  https://github.com/tomnomnom/gf
 
 ```
 go install github.com/tomnomnom/gf@latest
@@ -82,6 +97,7 @@ gowitness file <urlslist.txt>
 ```
 
 **网站历史URL获取**
+```
 
 **gau**   https://github.com/lc/gau  
 
@@ -90,6 +106,7 @@ gowitness file <urlslist.txt>
 **waybackurls** https://github.com/tomnomnom/waybackurls
 
 **gospider** https://github.com/jaeles-project/gospider
+```
 
 ```
 爬虫获取链接，运行20个站点每个站点10个爬虫
