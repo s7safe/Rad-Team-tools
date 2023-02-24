@@ -54,6 +54,10 @@ gf
 
 https://github.com/tomnomnom/gf
 
+```
+go install github.com/tomnomnom/gf@latest
+```
+
 
 
 **//获取子域名，对比文件，验证存活，达到监听新资产的目的**
