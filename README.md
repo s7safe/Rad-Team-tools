@@ -11,6 +11,14 @@ subfinder  https://github.com/projectdiscovery/subfinder
 
 
 
+# 一键调用subfinder+ksubdomain+httpx 强强联合从域名发现到域名验证到获取域名标题、状态码以及响应大小
+
+```
+./subfinder -d mrxn.net -silent|sudo ./ksubdomain -verify -skip-wild -silent|./httpx -title -content-length -status-code -o mrxn.net.txt
+```
+https://github.com/Mr-xn/subdomain_shell/blob/master/ubuntu/run.sh
+
+
 **DNS枚举**
 https://github.com/projectdiscovery/dnsx
 
