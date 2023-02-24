@@ -188,3 +188,11 @@ arjun -u https://api.example.com/endpoint -m POST
 echo url | subfinder -silent | waybackurls | grep "=" | grep -Ev ".(jpeg|jpg|png|svg|gif|ico|js|css|txt|pdf|woff|woff2|eot|ttf|tif|tiff)" | sed -e 's/=[^?\|&amp;]*/=/g' -e 's/=/=xssspayload/g' | sort -u | httpx -silent -probe -ms "xsspayload" 
 ```
 
+
+XRAY自动化查找单漏洞
+
+```
+xargs -a urls.txt -I@ sh -c './xray_linux_amd64 webscan --plugins cmd-injection,sqldet,xss --url "@" --html-output vuln.html' 
+
+```
+
