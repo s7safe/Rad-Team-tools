@@ -229,5 +229,7 @@ XRAY自动化查找单漏洞
 ```
 xargs -a urls.txt -I@ sh -c './xray_linux_amd64 webscan --plugins cmd-injection,sqldet,xss --url "@" --html-output vuln.html' 
 
+.\xray.exe webscan --listen 127.0.0.1:7777  --plugins sqldet,brute-force --html-output xray-testphhjp.html
+
 ```
 
