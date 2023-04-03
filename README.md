@@ -81,7 +81,8 @@ subfinder -silent -dL domain.txt  |  dnsx -silent | httpx -mc 200 -timeout 30 -o
 anew   https://github.com/tomnomnom/anew  
 
 ```
-gf  https://github.com/tomnomnom/gf
+
+gf  https://github.com/tomnomnom/gf      GF分步安装教程；https://doepichack.com/gf-tool-step-by-step-guide/
 
 ```
 go install github.com/tomnomnom/gf@latest
