@@ -1,13 +1,15 @@
-# 总结红队作战工具
-```
+# 总结赏金技巧和工作技巧
 
+```
 本列表，收集一些在服务器上运行的一些工具，组件自动化，服务器长期挂跑项目 欢迎提issues，来丰富工作流程，比如自己挖洞时候的一些简易流程，工具+调用命令，
 在我的日常渗透中，我发现我重复调用几个工具，但是不同的调用组合渗透的工作流程，有时候调用命令会忘记，所以有了这个列表，来达到帮助我记忆一些流程命令的文档，未来还会细化过程，脚本小子福音了
+
+其中有些连接和笔记从17年我的笔记所摘取，有错误请提醒，我修改一下，有些技巧也很老了，现在信息收集分为主动化和被动化，主动化更偏向于发现新资产，被动化稍微弱点。
 ```
 
 **//子域名获取**
-```
 
+```
 subdomain3 https://github.com/yanxiu0614/subdomain3/blob/master/README_ZH.md 
 
 subfinder  https://github.com/projectdiscovery/subfinder 
@@ -16,12 +18,29 @@ ksubdomain  https://github.com/knownsec/ksubdomain
 
 ```
 
+通过RapidDNS查询子域名
+
+```
+curl -s "https://rapiddns.io/subdomain/$1?full=1" | grep -oP '_blank">\K[^<]*' | grep \* |sort -u
+```
+
+证书透明收集子域名
+
+```
+证书透明度：
+echo 'https://bl669.com' | ./httpx -tls-probe -json -silent | jq -r '.["tls-grab"]'.dns_names  >> a.txt
+```
+
+使用工具提取证书的域名；https://github.com/cheetz/sslScrape
+
+
 
 # 一键调用subfinder+ksubdomain+httpx 强强联合从域名发现到域名验证到获取域名标题、状态码以及响应大小
 
 ```
 ./subfinder -d mrxn.net -silent|sudo ./ksubdomain -verify -skip-wild -silent|./httpx -title -content-length -status-code -o mrxn.net.txt
 ```
+
 https://github.com/Mr-xn/subdomain_shell/blob/master/ubuntu/run.sh
 
 这样接入二次扫描好一点 
@@ -77,7 +96,6 @@ subfinder -silent -dL domain.txt  |  dnsx -silent | httpx -mc 200 -timeout 30 -o
 **//去重对比**
 
 ```
-
 anew   https://github.com/tomnomnom/anew  
 
 ```
@@ -104,8 +122,8 @@ gowitness file <urlslist.txt>
 ```
 
 **网站历史URL获取**
-```
 
+```
 **gau**   https://github.com/lc/gau  
 
 **hakrawler** https://github.com/hakluke/hakrawler  
@@ -220,6 +238,7 @@ arjun -u https://api.example.com/endpoint -m POST
 ```
 
 一行代码组成的XSS扫描器（适合无WAF场景）【单论反射XSS，XRAY可封神】
+
 ```
 echo url | subfinder -silent | waybackurls | grep "=" | grep -Ev ".(jpeg|jpg|png|svg|gif|ico|js|css|txt|pdf|woff|woff2|eot|ttf|tif|tiff)" | sed -e 's/=[^?\|&amp;]*/=/g' -e 's/=/=xssspayload/g' | sort -u | httpx -silent -probe -ms "xsspayload" 
 ```
@@ -233,4 +252,93 @@ xargs -a urls.txt -I@ sh -c './xray_linux_amd64 webscan --plugins cmd-injection,
 .\xray.exe webscan --listen 127.0.0.1:7777  --plugins sqldet,brute-force --html-output xray-testphhjp.html
 
 ```
+
+使用扫描器nuclei扫描安卓漏洞
+
+```
+find . -iname "*.apk" -exec apktool d -o {}_out {} \;
+echo  vph3.apk_out | nuclei -t mobile-nuclei-templates/
+
+nuclei -target "android testing"/allapks/ -t /mobile-nuclei-templates/
+
+
+echo /output_apktool/ | nuclei -t Keys/
+
+使用POC
+https://github.com/optiv/mobile-nuclei-templates
+```
+
+文件夹下文件整理
+
+```
+dir/b>E:\鱼1.xls"
+dir/b>C:\Users\1均\Desktop\HW\HW漏洞列表.xls"
+```
+
+BURP不抓火狐的包
+
+```
+火狐地址搜索
+
+about:config
+
+network.captive-portal-service
+
+把true改成fale
+```
+
+index of 打包
+
+```
+wget -r --no-pare target.com/dir
+```
+
+渗透测试中的资产获取
+
+```
+wget https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/master/dist/pcas.json
+cat pcas.json |jq '."北京市"'>out.txt        #获取北京市所有辖区、街道信息cat pcas.json |jq '."北京市"."市辖区"'>out.txt
+
+cat pcas.json |jq '."北京市"."市辖区"."东城区"'>out.txt      #获取北京市东城区所有街道信息
+
+
+
+```
+
+
+
+有时候文件太大,想先确认一下文件结构和部分内容,这时可以使用 remotezip,直接列出远程 zip 文件的内容，而无需完全下载,甚至可以远程解压,仅下载部分内容
+
+```
+pip3 install remotezip
+ remotezip -l "http://site/bigfile.zip"#列出远程zip文件的内容
+ remotezip "http://site/bigfile.zip""file.txt"#从远程zip⽂件解压出file.txt
+```
+
+
+
+整理字典时，推荐用linux下的工具快速合并和去重
+
+```
+cat file1.txt file2.txt fileN.txt >out.txt 
+sort out.txt |uniq >out2.txt
+```
+
+
+
+docker 快速安装AWVS扫描器，配合批量添加脚本，在市级HVV上抢占一些高危漏洞点
+
+```
+#  pull 拉取下载镜像
+docker pull secfa/docker-awvs
+
+#  将Docker的3443端口映射到物理机的 13443端口
+docker run -it -d -p 13443:3443 secfa/docker-awvs
+
+# 容器的相关信息
+awvs13 username: admin@admin.com
+awvs13 password: Admin123
+```
+
+
 
